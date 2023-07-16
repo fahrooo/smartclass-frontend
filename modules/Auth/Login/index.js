@@ -154,7 +154,7 @@ const Login = () => {
         useAuthUserStore
           .getState()
           // .fetch(`https://qa-smartclass.pindad.co.id/be/me/${res.data?.id}`);
-        .fetch(`http://localhost:5000/me/${res.data?.id}`);
+        .fetch(`http://103.155.246.50:5000/me/${res.data?.id}`);
         setIsLoading(false);
         setDisabled(false);
         toast({

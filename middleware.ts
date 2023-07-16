@@ -30,7 +30,7 @@ export async function middleware(request: NextRequest) {
       await 
       //   (await fetch(`https://qa-smartclass.pindad.co.id/be/me/${id}`)
       // ).json();
-      (await fetch(`http://localhost:5000/me/${id}`)).json();
+      (await fetch(`http://103.155.246.50:5000/me/${id}`)).json();
 
     if (
       (request.nextUrl.pathname == "/" &&

@@ -12,7 +12,7 @@ const DashboardSidebar = ({ items }) => {
 
   const handleLogout = async () => {
     try {
-      const result = await axios.delete("http://localhost:5000/logout");
+      const result = await axios.delete("http://103.155.246.50:5000/logout");
 
       if (result?.status === 200) {
         Cookies.remove("email");

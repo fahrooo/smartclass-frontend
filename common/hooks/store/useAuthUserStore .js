@@ -15,7 +15,7 @@ if (id) {
   useAuthUserStore
     .getState()
     .fetch(`https://qa-smartclass.pindad.co.id/be/me/${id}`);
-    // .fetch(`http://localhost:5000/me/${id}`);
+    // .fetch(`http://103.155.246.50:5000/me/${id}`);
 }
 
 export default useAuthUserStore;

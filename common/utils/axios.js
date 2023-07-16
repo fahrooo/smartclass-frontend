@@ -6,12 +6,12 @@ axios.defaults.withCredentials = true;
 
 const axiosBasic = axios.create({
   // baseURL: "https://qa-smartclass.pindad.co.id/be/",
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://103.155.246.50:5000/",
 });
 
 const axiosInstance = axios.create({
   // baseURL: "https://qa-smartclass.pindad.co.id/be/",
-  baseURL: "http://localhost:5000/",
+  baseURL: "http://103.155.246.50:5000/",
 });
 
 //CRUD WITHOUT TOKEN

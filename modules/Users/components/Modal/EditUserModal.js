@@ -156,7 +156,7 @@ const EditUserModal = ({
             if (idLogin == id) {
               useAuthUserStore
                 .getState()
-                .fetch(`http://localhost:5000/me/${idLogin}`);
+                .fetch(`http://103.155.246.50:5000/me/${idLogin}`);
             }
             refetch();
             toast({
