@@ -149,7 +149,7 @@ const InfoPribadiModal = ({ onClose, isOpen, data }) => {
       {
         onSuccess: (res) => {
           if (res?.status === 200) {
-            useAuthUserStore.getState().fetch(`https://qa-smartclass.pindad.co.id/be/me/${id}`);
+            useAuthUserStore.getState().fetch(`http://103.155.246.50:5000/me/${id}`);
             toast({
               title: "Edit Info Pribadi Berhasil!",
               status: "success",
