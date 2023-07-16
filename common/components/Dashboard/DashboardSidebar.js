@@ -37,7 +37,7 @@ const DashboardSidebar = ({ items }) => {
     >
       <Center mt="31px" display="flex" flexDirection="column">
         <Box w="50px">
-          <Image src={logo} alt="logo" priority />
+          <Image src={logo} alt="logo" priority width={80} />
         </Box>
         <Text
           fontSize="12px"
@@ -46,7 +46,7 @@ const DashboardSidebar = ({ items }) => {
           textAlign="center"
           mt="10px"
         >
-          Innovation Connect
+          Semar Connect
         </Text>
       </Center>
       <VStack mt="30px" textAlign="center" gap={3}>

@@ -31,9 +31,9 @@ const AuthLayout = ({ children }) => {
         <Box position="absolute">
           <Box mb="50px" display="flex" justifyContent="center">
             <Stack direction="column" alignItems="center">
-              <Image src={logo} alt="logo" priority />
+              <Image src={logo} alt="logo" width={110} priority />
               <Text fontSize="15px" color="#FFFFFF" fontWeight="bold">
-                Innovation Connect
+                Semar Connect
               </Text>
             </Stack>
           </Box>
