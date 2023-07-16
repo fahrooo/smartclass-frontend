@@ -37,7 +37,7 @@ const DashboardSidebar = ({ items }) => {
     >
       <Center mt="31px" display="flex" flexDirection="column">
         <Box w="50px">
-          <Image src={logo} alt="logo" priority width={80} />
+          <Image src={logo} alt="logo" priority width={100} />
         </Box>
         <Text
           fontSize="12px"
