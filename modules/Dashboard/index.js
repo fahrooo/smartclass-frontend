@@ -51,6 +51,8 @@ import Booking from "../Booking";
 import getoperator from "../Operator/api/getoperator";
 import generateSidebarAdminItems from "@/common/utils/sidebarAdmin";
 import generateSidebarOperatorItems from "@/common/utils/sidebarOperator";
+import moment from "moment";
+import getperangkatkelasbyschedule from "./api/getperangkatkelasbyschedule";
 
 const Dashboard = () => {
   const router = useRouter();
@@ -244,6 +246,36 @@ const Dashboard = () => {
       return proyektor;
     }
   };
+
+  const tglShcedule = moment().format("YYYY-MM-DD");
+  const timeShcedule = moment().add(15, "m").format("HH:mm");
+
+  const {
+    data: resPerangkatKelasBySchedule,
+    isLoading: isLoadingPerangkatKelasBySchedule,
+    refetch: refetchGetPerangkatKelasBySchedule,
+  } = getperangkatkelasbyschedule({
+    waktu_pemesanan: tglShcedule,
+    time_start: timeShcedule.substring(0, 2) + ":" + "00",
+  });
+
+  useEffect(() => {
+    if (resPerangkatKelasBySchedule?.status == 200) {
+      for (const perangkat of resPerangkatKelasBySchedule?.data) {
+        try {
+          mqttpublish({
+            topic: `${perangkat?.topic}/${perangkat?.nama_perangkat.replace(
+              " ",
+              "-"
+            )}`,
+            message: `${perangkat?.turn_on}`,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    }
+  }, [resPerangkatKelasBySchedule?.status]);
 
   return (
     <>
