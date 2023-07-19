@@ -151,26 +151,26 @@ const DashboardDeviceItem = ({
 
   const [intervalSubscribe, setIntervalSubscribe] = useState("");
 
-  // useEffect(() => {
-  //   if (type != "PINTU" && pathname == "/dashboard") {
-  //     setIntervalSubscribe(
-  //       setInterval(async () => {
-  //         await postFetcherWT("/mqtt/subscribe", {
-  //           topic: `${topic}/${label.replace(" ", "-")}/CALLBACK`,
-  //         }).then((res) => {
-  //           if (res?.message == turnOff) {
-  //             setPower(false);
-  //           } else {
-  //             setPower(true);
-  //           }
-  //         });
-  //       }, 1 * 1000)
-  //     );
-  //     intervalSubscribe;
-  //   } else {
-  //     clearInterval(intervalSubscribe);
-  //   }
-  // }, [type, pathname]);
+  useEffect(() => {
+    if (type != "PINTU" && pathname == "/dashboard") {
+      setIntervalSubscribe(
+        setInterval(async () => {
+          await postFetcherWT("/mqtt/subscribe", {
+            topic: `${topic}/${label.replace(" ", "-")}/CALLBACK`,
+          }).then((res) => {
+            if (res?.message == turnOff) {
+              setPower(false);
+            } else {
+              setPower(true);
+            }
+          });
+        }, 1 * 5000)
+      );
+      intervalSubscribe;
+    } else {
+      clearInterval(intervalSubscribe);
+    }
+  }, [type, pathname]);
 
   const handleUp = async () => {
     if (value == maxValue) {
