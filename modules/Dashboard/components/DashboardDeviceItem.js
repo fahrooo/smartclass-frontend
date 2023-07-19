@@ -164,7 +164,7 @@ const DashboardDeviceItem = ({
               setPower(true);
             }
           });
-        }, 1 * 1000)
+        }, 1 * 3000)
       );
       intervalSubscribe;
     } else {
