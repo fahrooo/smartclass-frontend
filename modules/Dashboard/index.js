@@ -275,7 +275,7 @@ const Dashboard = () => {
         }
       }
     }
-  }, [resPerangkatKelasBySchedule?.status]);
+  }, [resPerangkatKelasBySchedule?.status, timeShcedule.substring(0, 2)]);
 
   return (
     <>
